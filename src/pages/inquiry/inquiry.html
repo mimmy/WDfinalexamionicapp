@@ -10,12 +10,13 @@
 <ion-content>
 
   <div class="wrapper">
-  <button full primary (click)="lookOp('2016-01-01', '2020-01-01')">Look Op</button>
+  <button full primary (click)="lookOp('2016-01-01', '2020-01-01')">Clickme</button>
   <button full primary (click)="scan()">Scan</button>
-  <!--<button full primary (click)="reset()">Reset</button>-->
+    <!--<label>From: <input type="date" name="fromDate" id="fromDate"></label>-->
+    <!--<label>To: <input type="date" name="toDate" id="toDate"></label>-->
   <div *ngIf="results">
     <h2>Code: {{results.text}}</h2>
-    <button full primary (click)="lookUp('2016-01-01', '2020-01-01')">Look up</button>
+    <button full primary (click)="lookUp(fromDate.value, toDate.value)">Look up</button>
 
   </div>
 
@@ -43,8 +44,6 @@
       <p class="product-manufacturer">{{cityOfStars.manufacturer}}</p>
       <p>Price: {{cityOfStars.defaultPrice | currency:'BGN'}}</p>
       <div class="sales-details" *ngFor="let sale of cityOfStars.sales">
-        <!--<p>{{sale.saleTime | date:'fullDate'}}</p>-->
-        <!--<p>{{sale.saleTime | date:'shortTime'}}</p>-->
         <p>{{sale.saleTime | date:'medium'}}</p>
         <p>Amount: {{sale.quantity}} x {{sale.price | currency:'BGN':false}} each || total: {{sale.value | currency:'BGN'}}</p>
         <p>From lot {{sale.lot}}</p>
