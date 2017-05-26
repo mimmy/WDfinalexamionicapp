@@ -1,6 +1,8 @@
 // http://ionicframework.com/docs/v2/theming/
 
-
+$primary-color: #1D8BC6;
+$secondary-color: #1ABC9C;
+$danger-color: #F21B2B;
 // App Global Sass
 // --------------------------------------------------
 // Put style rules here that you want to apply globally. These
@@ -14,3 +16,55 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+div, p {
+  font-size: 16px;
+}
+
+button {
+  font-size: 20px;
+}
+
+.sales-product {
+  background: $primary-color;
+  color: white;
+  padding: 20px;
+  .product-manufacturer, .product-name {
+    display: inline;
+  }
+  .product-manufacturer {
+    margin-left: 5px;
+  }
+  .product-name{
+    font-size: 29px;
+  }
+}
+
+.sales-details {
+  background: white;
+  color: black;
+  padding: 2px 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.wrapper {
+  padding: 15px;
+}
+
+button {
+  background: $secondary-color;
+  padding: 13px 17px;
+  border-radius: 7px;
+  color: white;
+}
+
+.expiring-soon{
+  h3, .expiration-date{
+    color: $danger-color;
+  }
+}
+//
+//.toolbar-background-md {
+//  background: $primary-color;
+//  color: white;
+//}

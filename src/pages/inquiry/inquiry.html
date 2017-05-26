@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>List</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div class="wrapper">
+  <button full primary (click)="lookOp('2016-01-01', '2020-01-01')">Look Op</button>
+  <button full primary (click)="scan()">Scan</button>
+  <!--<button full primary (click)="reset()">Reset</button>-->
+  <div *ngIf="results">
+    <h2>Code: {{results.text}}</h2>
+    <button full primary (click)="lookUp('2016-01-01', '2020-01-01')">Look up</button>
+
+  </div>
+
+  <div class="sales-results" *ngIf="lala">
+    <h3>Results:</h3>
+    <div class="sales-product">
+      <h4 class="product-name">{{lala.productName}}</h4>
+      <p class="product-manufacturer">{{lala.manufacturer}}</p>
+      <p>Price: {{lala.defaultPrice | currency:'BGN'}}</p>
+      <div class="sales-details" *ngFor="let sale of lala.sales">
+        <!--<p>{{sale.saleTime | date:'fullDate'}}</p>-->
+        <!--<p>{{sale.saleTime | date:'shortTime'}}</p>-->
+        <p>{{sale.saleTime | date:'medium'}}</p>
+        <p>Amount: {{sale.quantity}} x {{sale.price | currency:'BGN':false}} each || total: {{sale.value | currency:'BGN'}}</p>
+        <p>From lot {{sale.lot}}</p>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="sales-results" *ngIf="cityOfStars">
+    <h3>Results:</h3>
+    <div class="sales-product">
+      <h4 class="product-name">{{cityOfStars.productName}}</h4>
+      <p class="product-manufacturer">{{cityOfStars.manufacturer}}</p>
+      <p>Price: {{cityOfStars.defaultPrice | currency:'BGN'}}</p>
+      <div class="sales-details" *ngFor="let sale of cityOfStars.sales">
+        <!--<p>{{sale.saleTime | date:'fullDate'}}</p>-->
+        <!--<p>{{sale.saleTime | date:'shortTime'}}</p>-->
+        <p>{{sale.saleTime | date:'medium'}}</p>
+        <p>Amount: {{sale.quantity}} x {{sale.price | currency:'BGN':false}} each || total: {{sale.value | currency:'BGN'}}</p>
+        <p>From lot {{sale.lot}}</p>
+      </div>
+    </div>
+  </div>
+  </div>
+
+</ion-content>

@@ -8,11 +8,23 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
+  <div class="wrapper">
+  <h3>Welcome to Vedra!</h3>
 
   <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
+    Press the menu button on the left for sales and delivery inquiries!
   </p>
 
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+<p>___________________________________</p>
+
+  <!--<button ion-button (click)="testtest()">Alert me</button>-->
+ <!--<p>Call <a href="tel:+359879136323" type="text/html">+359879136323</a> for more info.</p>-->
+  <div *ngIf="somethings" class="expiring-soon">
+    <h3>Products expiring soon!</h3>
+    <div class="data-box" *ngFor="let item of somethings">
+      <h4>{{item.product}}</h4>
+      <p>Expires <span class="expiration-date">{{item.expires | date:'fullDate'}}</span></p>
+    </div>
+  </div>
+</div>
 </ion-content>
